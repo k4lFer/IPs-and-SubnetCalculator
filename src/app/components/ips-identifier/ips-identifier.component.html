@@ -1,0 +1,118 @@
+<p>ips-identifier works!</p>
+<div >
+    <ul class="">
+        <label>
+          IP Address:
+          <input type="text" [(ngModel)]="ipAddress" class="ip-input" />
+        </label>
+            
+        <button
+          mat-raised-button
+          type="button"
+          (click)="handleStart()"
+        >
+          Calculate
+        </button>
+      </ul>
+</div>
+<!--
+<div *ngIf="results">
+    <mat-list>
+        <mat-list-item>
+          <span matListItemTitle>Ip Addres: </span>
+          <span matListItemLine>{{ results.}}</span>
+        </mat-list-item>
+        <mat-list-item>
+          <span matListItemTitle>IP Class:</span>
+          <span matListItemLine>{{ results. }}</span>
+        </mat-list-item>
+        <mat-list-item>
+          <span matListItemTitle>Subnet Mask:</span>
+          <span matListItemLine>{{ results.}}</span>
+        </mat-list-item>
+        <mat-list-item>
+            <span matListItemTitle>Red Address:</span>
+            <span matListItemLine>{{ results.}}</span>
+        </mat-list-item>
+        <mat-list-item>
+            <span matListItemTitle>Host Address:</span>
+            <span matListItemLine>{{ results.}}</span>
+        </mat-list-item>        
+        <mat-list-item>
+            <span matListItemTitle>Red ID:</span>
+            <span matListItemLine>{{ results.}}</span>
+        </mat-list-item>  
+        <mat-list-item>
+            <span matListItemTitle>Host ID:</span>
+            <span matListItemLine>{{ results. }}</span>
+        </mat-list-item>     
+        <mat-list-item>
+            <span matListItemTitle>Red Bits:</span>
+            <span matListItemLine>{{ results. }}</span>
+        </mat-list-item> 
+        <mat-list-item>
+            <span matListItemTitle>Host Bits:</span>
+            <span matListItemLine>{{ results. }}</span>
+        </mat-list-item> 
+        <mat-list-item>
+            <span matListItemTitle>Usable IPs:</span>
+            <span matListItemLine>{{ results. }}</span>
+        </mat-list-item> 
+        <mat-list-item>
+            <span matListItemTitle>Distributed Networks:</span>
+            <span matListItemLine>{{ results. }}</span>
+        </mat-list-item> 
+     </mat-list>
+    
+    
+    </div>-->
+
+
+    <div *ngIf="results">
+        <mat-list>
+          <mat-list-item>
+            <span matListItemTitle>Ip Address: </span>
+            <span matListItemLine>{{ results.split('\n')[0].split(':')[1].trim() }}</span>
+          </mat-list-item>
+          <mat-list-item>
+            <span matListItemTitle>IP Class: </span>
+            <span matListItemLine>{{ results.split('\n')[1].split(':')[1].trim() }}</span>
+          </mat-list-item>
+          <mat-list-item>
+            <span matListItemTitle>Subnet Mask: </span>
+            <span matListItemLine>{{ results.split('\n')[2].split(':')[1].trim() }}</span>
+          </mat-list-item>
+          <mat-list-item>
+            <span matListItemTitle>Network Address: </span>
+            <span matListItemLine>{{ results.split('\n')[3].split(':')[1].trim() }}</span>
+          </mat-list-item>
+          <mat-list-item>
+            <span matListItemTitle>Host Address: </span>
+            <span matListItemLine>{{ results.split('\n')[4].split(':')[1].trim() }}</span>
+          </mat-list-item>
+          <mat-list-item>
+            <span matListItemTitle>Network ID: </span>
+            <span matListItemLine>{{ results.split('\n')[5].split(':')[1].trim() }}</span>
+          </mat-list-item>
+          <mat-list-item>
+            <span matListItemTitle>Host ID: </span>
+            <span matListItemLine>{{ results.split('\n')[6].split(':')[1].trim() }}</span>
+          </mat-list-item>
+          <mat-list-item>
+            <span matListItemTitle>Network Bits: </span>
+            <span matListItemLine>{{ results.split('\n')[7].split(':')[1].trim() }}</span>
+          </mat-list-item>
+          <mat-list-item>
+            <span matListItemTitle>Host Bits: </span>
+            <span matListItemLine>{{ results.split('\n')[8].split(':')[1].trim() }}</span>
+          </mat-list-item>
+          <mat-list-item>
+            <span matListItemTitle>Usable IPs: </span>
+            <span matListItemLine>{{ results.split('\n')[9].split(':')[1].trim() }}</span>
+          </mat-list-item>
+          <mat-list-item>
+            <span matListItemTitle>Distributed Networks: </span>
+            <span matListItemLine>{{ results.split('\n')[10].split(':')[1].trim() }}</span>
+          </mat-list-item>
+        </mat-list>
+      </div>    

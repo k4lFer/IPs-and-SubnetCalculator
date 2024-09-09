@@ -1,0 +1,83 @@
+
+<div class="centered-container">
+    <div class="">
+     
+     <!--   <ul class="">
+        <label>
+          IP Address:
+          <input type="text" [(ngModel)]="ipAddress" />
+        </label>
+  
+        <label>
+          Subnet Redes:
+          <input type="text" [(ngModel)]="subredes" />
+        </label>
+
+        <button
+        mat-raised-button
+         type="button" (click)="handleStart()" > Procesar
+       </button>
+      </ul>-->
+      <ul class="">
+        <label>
+          IP Address:
+          <input type="text" [(ngModel)]="ipAddress" class="ip-input" />
+        </label>
+      
+        <label>
+          Subnet Redes:
+          <input type="text" [(ngModel)]="subredes" class=" subnets-input"/> 
+        </label>
+      
+        <button
+          mat-raised-button
+          type="button"
+          (click)="handleStart()"
+        >
+          Procesar
+        </button>
+      </ul>
+      <div>
+
+        <div *ngIf="results">
+        <mat-list>
+            <mat-list-item>
+              <span matListItemTitle>Clase de red: </span>
+              <span matListItemLine>{{ results.networkClass }}</span>
+            </mat-list-item>
+            <mat-list-item>
+              <span matListItemTitle>IP de red:</span>
+              <span matListItemLine>{{ results.IPred }}</span>
+            </mat-list-item>
+            <mat-list-item>
+              <span matListItemTitle>Máscara del padre:</span>
+              <span matListItemLine>{{ results.mascara }}</span>
+            </mat-list-item>
+            <mat-list-item>
+                <span matListItemTitle>Bits prestados:</span>
+                <span matListItemLine>{{ results.bits + ' bits' }}</span>
+            </mat-list-item>
+            <mat-list-item>
+                <span matListItemTitle>Número total de subredes:</span>
+                <span matListItemLine>{{ results.Nsubred + ' sub redes ' + (results.Nsubred - 2) + ' sub redes Configurables' }}</span>
+            </mat-list-item>        
+            <mat-list-item>
+                <span matListItemTitle>Nro de IPs por subred:</span>
+                <span matListItemLine>{{ results.IPsubred }}</span>
+            </mat-list-item>  
+            <mat-list-item>
+                <span matListItemTitle>Máscara de la subred:</span>
+                <span matListItemLine>{{ results.Msubred }}</span>
+            </mat-list-item>     
+            <mat-list-item>
+                <span matListItemTitle>Saltos:</span>
+                <span matListItemLine>{{ results.saltos }}</span>
+            </mat-list-item> 
+            
+            <button mat-raised-button color="primary" (click)="onclickTable()">View Table</button>
+         </mat-list>
+        
+        
+        </div>
+      </div>
+  

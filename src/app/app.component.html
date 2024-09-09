@@ -1,0 +1,19 @@
+
+<mat-toolbar color="light dark">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Calculator</span>
+  <span class="example-spacer"></span>
+  <span class ="example-spacer button-container">
+    <button mat-button routerLink="/ips-identifier">Ips Identifier</button>
+    <button mat-button routerLink="/calculator-subnet">Calculator Subnet</button>
+  </span>
+
+</mat-toolbar>
+
+<div class="flex justify-center w-full max-w-px-96">
+<router-outlet></router-outlet>
+
+</div>
+

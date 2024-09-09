@@ -1,0 +1,17 @@
+/* styles.css */
+
+.mat-toolbar {
+    display: flex;
+   
+  }
+  
+  .button-container {
+    display: flex;
+    gap: 10px; 
+    margin-left: 14px;
+  }
+  
+  .button-container button {
+    margin-right: 10px; 
+  }
+  

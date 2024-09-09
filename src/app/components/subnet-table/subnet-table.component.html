@@ -1,0 +1,31 @@
+<mat-dialog-content>
+  <!-- ... (otro contenido) -->
+  
+  <table mat-table class="mat-elevation-z8" [dataSource]="subnets">
+    <ng-container matColumnDef="i">
+      <th mat-header-cell *matHeaderCellDef>No. Subred</th>
+      <td mat-cell *matCellDef="let data">{{ data.i }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Ipsubred">
+      <th mat-header-cell *matHeaderCellDef>IP Subred</th>
+      <td mat-cell *matCellDef="let subnet">{{ subnet.Ipsubred }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Ipconf">
+      <th mat-header-cell *matHeaderCellDef>Rango IP</th>
+      <td mat-cell *matCellDef="let subnet">{{ subnet.Ipconf }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Broadcast">
+      <th mat-header-cell *matHeaderCellDef>Broadcast</th>
+      <td mat-cell *matCellDef="let subnet">{{ subnet.Broadcast }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="closeDialog()">Exit</button>
+</mat-dialog-actions>
